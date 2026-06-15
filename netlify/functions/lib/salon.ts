@@ -147,7 +147,6 @@ export async function summonGuest(name: string, uiLang: Lang): Promise<SummonedG
   const res = await client().messages.create({
     model: MODEL,
     max_tokens: 1200,
-    temperature: 0.7,
     tool_choice: { type: "tool", name: "compose_guest" },
     tools: [tool],
     system:
@@ -213,7 +212,6 @@ export async function distill(
   const res = await client().messages.create({
     model: MODEL,
     max_tokens: 900,
-    temperature: 0.5,
     tool_choice: { type: "tool", name: "distill_carnet" },
     tools: [tool],
     system:
